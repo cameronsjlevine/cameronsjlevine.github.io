@@ -1,3 +1,3 @@
 layout: page
 title: "Home Page"
-permalink: /https://cameronsjlevine.github.io/main/
+permalink: https://cameronsjlevine.github.io/main/
