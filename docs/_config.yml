@@ -28,7 +28,7 @@ twitter_username: NOTAPPLICABLE
 github_username:  cameronsjlevine
 
 # Build settings
-theme: minima
+theme: midnight
 plugins:
   - jekyll-feed
 
