@@ -3,4 +3,4 @@ layout: default
 ---
 
 Duck Warrior
-[![image](./_images/duckWarrior.jpg "duckWarriorIcon.jpg")](https://cameronsjlevine.github.io/duckWarrior.md)
+[![image](./_images/duckWarriorIcon.jpg)](https://cameronsjlevine.github.io/duckWarrior.md)
