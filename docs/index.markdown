@@ -5,4 +5,4 @@ permalink: /home/
 ---
 
 Duck Warrior
-![image](duckWarrior.jpg "duckWarrior.jpg")
+![image](cameronsjlevine.github.io/_images/duckWarrior.jpg "duckWarrior.jpg")
