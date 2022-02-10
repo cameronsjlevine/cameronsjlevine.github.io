@@ -6,9 +6,23 @@ layout: default
     
   </head>
   <body>
+    <div class="wrapper">
+      <section>
+        <div id="title">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          <p>{{ site.description | default: site.github.project_tagline }}</p>
+        </div>
+      </section>
+    </div>
+
     <a href="duckWarrior.html"><img src="_images/duckWarriorIcon.jpg" alt="duckWarriorIcon.jpg"></a>
     <a href="cullingTheBloodRedForest.html"><img src="_images/cullingTheBloodRedForestIcon.jpg" alt="cullingTheBloodRedForestIcon.jpg"></a>
     <h1>About Me</h1>
     <p>My name is Cameron Levine.</p>
+    <div class="wrapper">
+      <hr>
+          <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+    </div>
   </body>
 </html>
