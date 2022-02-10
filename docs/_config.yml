@@ -19,10 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Cameron Levine
-email: chaotixlevine@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Cameron Levine's video game development portfolio. Here is showcased all of my past work and experiences in making games. 
-test: this is a test.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  cameronsjlevine
