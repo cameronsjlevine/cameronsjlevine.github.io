@@ -21,7 +21,6 @@
 title: Cameron Levine
 description: >- # this means to ignore newlines until "baseurl:"
   Cameron Levine's video game development portfolio. Here is showcased all of my past work and experiences in making games. 
-game1: ![image](_images/duckWarriorIcon.jpg)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  cameronsjlevine
