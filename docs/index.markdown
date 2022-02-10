@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: default
 title: Home
 permalink: /home/
 ---
 
 Duck Warrior
-![image](_images/duckWarrior.jpg "duckWarrior.jpg")
+![image](duckWarrior.jpg "duckWarrior.jpg")
