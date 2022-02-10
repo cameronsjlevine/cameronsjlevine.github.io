@@ -11,3 +11,6 @@ layout: default
     <p>Duck Warrior is a game.</p>
   </body>
 </html>
+# Duck Warrior
+![image](cameronsjlevine.github.io/docs/_images/duckWarriorSplash.jpg)
+Duck Warrior is a game.
