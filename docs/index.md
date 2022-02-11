@@ -3,6 +3,8 @@ layout: default
 ---
 # Games {#gameSection}  
 
+----------
+
 ## [Culling the Blood Red Forest](https://cameronsjlevine.github.io/cullingTheBloodRedForest)
 [![image](./images/cullingTheBloodRedForestIcon.jpg)](https://cameronsjlevine.github.io/cullingTheBloodRedForest)
 
