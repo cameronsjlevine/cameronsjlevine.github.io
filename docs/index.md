@@ -2,7 +2,8 @@
 layout: default
 title: Home
 ---
-# Games {#gameSection} <br /><br />
+# Games {#gameSection} 
+<br /><br />
 
 ## [Culling the Blood Red Forest](https://cameronsjlevine.github.io/cullingTheBloodRedForest)
 [![image](./images/cullingTheBloodRedForestIcon.jpg)](https://cameronsjlevine.github.io/cullingTheBloodRedForest)
