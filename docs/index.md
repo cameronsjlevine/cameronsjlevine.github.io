@@ -18,9 +18,3 @@ Duck Warrior is a 2D platformer where you control a duck with a knife strapped t
 
 # About {#aboutSection}
 [image](./images/aboutSectionPicture.jpg)
-
-| Games |
-| :----: |
-| ## [Culling the Blood Red Forest](https://cameronsjlevine.github.io/cullingTheBloodRedForest) |
-| [![image](./images/cullingTheBloodRedForestIcon.jpg)](https://cameronsjlevine.github.io/cullingTheBloodRedForest) |
-| Culling the Blood Red Forest is a 3D shooter where you speed around stages killing semi-aggressive forest creatures. Beating the boss at the end of a stage earns you a new gun to try out, giving you even more ways to succeed. |
