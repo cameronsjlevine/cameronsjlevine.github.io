@@ -16,5 +16,6 @@ We wanted the game to be a fast-paced arena shooter, and the solution we came up
 The guns were designed to be different in the way that each of them shoot. The pistol shoots a single small shot, the shotgun shoots a burst of pellets, the grenade launcher lobs a large bullet, and the LMG shoots three bullets at once rapidly. The slippery movement also meant that the recoil of the guns could be used to push oneself backwards, allowing the player to slow down or to move backwards outright. 
 
 [![ctbrfEnemiesVideo]({image-url})](./images/ctbrfEnemies.mp4 "Enemies")
+[![ctbrfAggressionVideo]({image-url})](./images/ctbrfAggression.mp4 "Aggression")
 
 The enemies' AI is programmed to wander around while not near the player, but if the player gets close, they run away. Once the player kills the first wave of enemies, they go on the attack – enemies now run towards the player if they get too close. Originally they only ran away, but this made the game almost impossible to lose.
