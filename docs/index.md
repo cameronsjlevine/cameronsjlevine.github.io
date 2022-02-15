@@ -2,7 +2,7 @@
 layout: default
 title: Home
 ---
-<h1 id="gameSection" style="text-align: center">Games</h1>   
+<h1 id="gameSection">Games</h1>   
 
 ## [Culling the Blood Red Forest](https://cameronsjlevine.github.io/cullingTheBloodRedForest)
 [![image](./images/cullingTheBloodRedForestIcon2.jpg)](https://cameronsjlevine.github.io/cullingTheBloodRedForest)
