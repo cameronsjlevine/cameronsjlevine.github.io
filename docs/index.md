@@ -2,6 +2,8 @@
 layout: default
 title: Home
 ---
+<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+
 <h1 id="gameSection">Games</h1>   
 
 ## [Duck Warrior](https://cameronsjlevine.github.io/duckWarrior)
