@@ -5,7 +5,7 @@ permalink: /cullingTheBloodRedForest/
 # Culling the Blood Red Forest
 ![image](./images/cullingTheBloodRedForestIcon2.jpg)
 
-[Play it now on itch.io](https://cameronlevine.itch.io/culling-the-blood-red-forest)
+<iframe src="https://itch.io/embed/1321167" height="167" width="552" frameborder="0"><a href="https://cameronlevine.itch.io/culling-the-blood-red-forest">Culling the Blood Red Forest by cameronlevine</a></iframe>
 
 Culling the Blood Red Forest is a 3D shooter where you speed around stages killing semi-aggressive forest creatures. Beating the boss at the end of a stage earns you a new gun to try out, giving you even more ways to succeed.
 
