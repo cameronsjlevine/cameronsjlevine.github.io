@@ -8,7 +8,7 @@ permalink: /cullingTheBloodRedForest/
 Culling the Blood Red Forest is a 3D shooter where you speed around stages killing semi-aggressive forest creatures. Beating the boss at the end of a stage earns you a new gun to try out, giving you even more ways to succeed.
 
 <video width="320" height="240" controls>
-  <source src="./images/ctbrfMovement.mp4" type="video/mp4">
+  <source src="https://cameronsjlevine.github.io/docs/images/ctbrfMovement.mp4" type="video/mp4">
 </video>
 
 We wanted the game to be a fast-paced arena shooter, and the solution we came up with was to make the player’s movement slightly slippery. To keep the speed going, we also decided to make the walls bouncy, which really helped to keep the player on the move.
