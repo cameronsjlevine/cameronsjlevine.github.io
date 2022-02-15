@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Duck Warrior
 permalink: /duckWarrior/
 ---
 <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
