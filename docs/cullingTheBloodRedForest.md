@@ -1,8 +1,10 @@
 ---
 layout: default
+title: Culling the Blood Red Forest
 permalink: /cullingTheBloodRedForest/
 ---
 <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+
 # Culling the Blood Red Forest
 ![image](./images/cullingTheBloodRedForestIcon2.jpg)
 
