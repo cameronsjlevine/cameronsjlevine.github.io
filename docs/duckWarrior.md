@@ -4,6 +4,7 @@ title: Duck Warrior
 permalink: /duckWarrior/
 ---
 <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+
 # Duck Warrior
 ![image](./images/duckWarriorIcon2.jpg)
 <iframe src="https://itch.io/embed/1020257" height="167" width="552" frameborder="0"><a href="https://cameronlevine.itch.io/duck-warrior">Duck Warrior by cameronlevine</a></iframe>
