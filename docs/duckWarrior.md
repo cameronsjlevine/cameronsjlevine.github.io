@@ -17,12 +17,16 @@ The starting inspiration for Duck Warrior was the game “Joust”, an Atari gam
 
 movementVideo
 
-movementDescription
+In the spirit of the game’s bird theme, we wanted to make the player’s jumping fluttery, to simulate the flapping of wings. Speed was also an important aspect, since the way to kill enemies is by ramming into them, so the controls needed to feel fast but not uncontrollable.
 
 levelDesignVideo
 
-levelDesignDescription
+The general design of the game was to be set in arena levels where the player must defeat all the enemies before taking on the boss. Spawning in new enemies after the initial enemies allowed for the fairly compact levels to still throw new obstacles at the player. 
+
+enemyDesignVideo
+
+The enemies either patrol an area of the level, or chase after the player. While the first level’s enemies are the least threatening, with their weapons at a fixed position, the second and third level’s enemies swing their weapons, making the player be more cautious in attacking them.
 
 bossVideo
 
-bossDescription
+Designing the bosses was a highlight for me, as coming up with new ways to make each boss fight different and challenging was fun. Each boss requires a different strategy to defeat it, with each boss being harder than the last. All of it ends up tied together by their absurd visual designs, courtesy of Spencer Carey. 
