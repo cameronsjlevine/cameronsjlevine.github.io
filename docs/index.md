@@ -7,13 +7,18 @@ title: Home
 ## [Culling the Blood Red Forest](https://cameronsjlevine.github.io/cullingTheBloodRedForest)
 [![image](./images/cullingTheBloodRedForestIcon2.jpg)](https://cameronsjlevine.github.io/cullingTheBloodRedForest)
 
-Culling the Blood Red Forest is a 3D shooter where you speed around stages killing semi-aggressive forest creatures. Beating the boss at the end of a stage earns you a new gun to try out, giving you even more ways to succeed.
+- Culling the Blood Red Forest is a 3D shooter
+- Programming was done by me, as well as some of the implementation of assets in Unity
+- Testing and implementation done by Joshua T. Fugate, 3D models and UI done by Charles Quinn, and sound effects and music done by Ethan D. Greening
+
 
 ## [Duck Warrior](https://cameronsjlevine.github.io/duckWarrior)
 [![image](./images/duckWarriorIcon2.jpg)](https://cameronsjlevine.github.io/duckWarrior)
 
-Duck Warrior is a 2D platformer where you control a duck with a knife strapped to his chest attempting to get his hat back. Each stage is an arena, where you have to kill waves of enemies before facing off against a boss. It was a fun project with an absurd concept that made my first game in Unity a memorable one.  
-
+- Duck Warrior is a 2D platformer
+- Programming, game design, and implementing assets into Unity were my responsibilities
+- Art, sound effects, and music done by Spencer Carey
+ 
 <hr>
 
 # About {#aboutSection}
