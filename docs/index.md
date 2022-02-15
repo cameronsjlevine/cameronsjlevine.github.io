@@ -11,7 +11,7 @@ title: Home
 - Programming, game design, and implementing assets into Unity were my responsibilities
 - Art, sound effects, and music done by Spencer Carey
  
- ## [Culling the Blood Red Forest](https://cameronsjlevine.github.io/cullingTheBloodRedForest)
+## [Culling the Blood Red Forest](https://cameronsjlevine.github.io/cullingTheBloodRedForest)
 [![image](./images/cullingTheBloodRedForestIcon2.jpg)](https://cameronsjlevine.github.io/cullingTheBloodRedForest)
 
 - Culling the Blood Red Forest is a 3D shooter
