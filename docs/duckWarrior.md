@@ -6,8 +6,6 @@ permalink: /duckWarrior/
 ![image](./images/duckWarriorIcon2.jpg)
 <iframe src="https://itch.io/embed/1020257" height="167" width="552" frameborder="0"><a href="https://cameronlevine.itch.io/duck-warrior">Duck Warrior by cameronlevine</a></iframe>
 
-[Play it now on itch.io](https://cameronlevine.itch.io/duck-warrior)
-
 Duck Warrior is a 2D platformer where you control a duck with a knife strapped to his chest attempting to get his hat back. Each stage is an arena, where you have to kill waves of enemies before facing off against a boss. It was a fun project with an absurd concept that made my first game in Unity a memorable one.
 
 image
