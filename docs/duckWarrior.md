@@ -24,7 +24,7 @@ In the spirit of the game’s bird theme, we wanted to make the player’s jumpi
 The general design of the game was to be set in arena levels where the player must defeat all the enemies before taking on the boss. Spawning in new enemies after the initial enemies allowed for the fairly compact levels to still throw new obstacles at the player. 
 
 ![image](./images/dWPidgeon.gif)
-<img src="./images/dWRobin.gif" width="200"/>
+<img src="./images/dWRobin.gif" height="200"/>
 
 The enemies either patrol an area of the level, or chase after the player. While the first level’s enemies are the least threatening, with their weapons at a fixed position, the second and third level’s enemies swing their weapons, making the player be more cautious in attacking them.
 
