@@ -13,5 +13,5 @@ My name is Cameron Levine, and I’m a video game programmer from Wisconsin. I a
 [![image](./images/mail.png)](mailto:chaotixlevine@gmail.com)
 [![image](./images/LI-In-Bug-small.png)](https://www.linkedin.com/in/cameron-levine-930242214)
 
-<a href="mailto:chaotixlevine@gmail.com"><img src="/./images/mail.png" style="height: 21px;"></a>
-<a href="https://www.linkedin.com/in/cameron-levine-930242214"><img src="/./images/LI-In-Bug-small.png" style="height: 21px;"></a>
+<a href="mailto:chaotixlevine@gmail.com"><img src="/./images/mail.png" style="height: 40px;"></a>
+<a href="https://www.linkedin.com/in/cameron-levine-930242214"><img src="/./images/LI-In-Bug-small.png" style="height: 40px;"></a>
