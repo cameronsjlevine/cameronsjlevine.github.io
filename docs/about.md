@@ -10,5 +10,5 @@ My name is Cameron Levine, and I’m a video game programmer from Wisconsin. I a
 
 <hr>
 
-[![image](./images/mail.png)](chaotixlevine@gmail.com)
+[![image](./images/mail.png)](mailto:chaotixlevine@gmail.com)
 [![image](./images/LI-In-Bug-small.png)](https://www.linkedin.com/in/cameron-levine-930242214)
