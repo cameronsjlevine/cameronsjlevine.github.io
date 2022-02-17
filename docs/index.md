@@ -18,6 +18,6 @@ title: Home
 
 - Culling the Blood Red Forest is a 3D shooter
 - Programming was done by me, as well as some of the implementation of assets in Unity
-- Testing and implementation done by Joshua T. Fugate, 3D models and UI done by Charles Quinn, and sound effects and music done by Ethan D. Greening
+- Testing and implementation done by Joshua T. Fugate, 3D models and UI done by Charles Quinn, and sound effects/music done by Ethan D. Greening
  
 <hr>
