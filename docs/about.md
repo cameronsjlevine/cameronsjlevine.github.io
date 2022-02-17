@@ -10,4 +10,4 @@ My name is Cameron Levine, and I’m a video game programmer from Wisconsin. I a
 
 <hr>
 
-[![image](./images/LI-In-Bug-small-2.png)](https://www.linkedin.com/in/cameron-levine-930242214)
+[![image](./images/LI-In-Bug-small.png)](https://www.linkedin.com/in/cameron-levine-930242214)
