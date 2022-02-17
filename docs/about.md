@@ -9,4 +9,4 @@ My name is Cameron Levine, and I’m a video game programmer from Wisconsin. I a
 
 [![image](./images/LI-In-Bug.png)](https://www.linkedin.com/in/cameron-levine-930242214)
 
-<img src="./images/LI-In-Bug.png" width="24px" height="24px>
+<a href="https://www.linkedin.com/in/cameron-levine-930242214"><img src="./images/LI-In-Bug.png" width="24px" height="24px></a> 
