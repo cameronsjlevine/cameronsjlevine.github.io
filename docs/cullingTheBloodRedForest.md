@@ -29,3 +29,10 @@ The guns were designed to be different in the way that each of them shoot. The p
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QZPnPXs7XdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The enemies' AI is programmed to wander around while not near the player, but if the player gets close, they run away. Once the player kills the first wave of enemies, they go on the attack – enemies now run towards the player if they get too close. Originally they only ran away, but this made the game almost impossible to lose.
+
+<hr>
+
+<div style="text-align: center;">
+  <a href="mailto:chaotixlevine@gmail.com"><img src="/./images/mail.png" style="height: 40px; margin: auto; padding-right: 10px;"></a>
+  <a href="https://www.linkedin.com/in/cameron-levine-930242214"><img src="/./images/LI-In-Bug.png" style="height: 40px;"></a>
+</div>
