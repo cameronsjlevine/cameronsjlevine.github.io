@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Home
+title: Resume
+
 ---  
 
 ## Resume
