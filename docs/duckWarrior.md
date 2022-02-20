@@ -31,3 +31,10 @@ The enemies either patrol an area of the level, or chase after the player. While
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Xb2TY1SBMlI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Designing the bosses was a highlight for me, as coming up with new ways to make each boss fight different and challenging was fun. Each boss requires a different strategy to defeat it, with each boss being harder than the last. All of it ends up tied together by their absurd visual designs, courtesy of Spencer Carey. 
+
+<hr>
+
+<div style="text-align: center;">
+  <a href="mailto:chaotixlevine@gmail.com"><img src="/./images/mail.png" style="height: 40px; margin: auto; padding-right: 10px;"></a>
+  <a href="https://www.linkedin.com/in/cameron-levine-930242214"><img src="/./images/LI-In-Bug.png" style="height: 40px;"></a>
+</div>
