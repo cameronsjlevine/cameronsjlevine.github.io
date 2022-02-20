@@ -21,3 +21,8 @@ title: Home
 - Testing and implementation done by Joshua T. Fugate, 3D models and UI done by Charles Quinn, and sound effects/music done by Ethan D. Greening
  
 <hr>
+
+<div style="text-align: center;">
+  <a href="mailto:chaotixlevine@gmail.com"><img src="/./images/mail.png" style="height: 40px; margin: auto; padding-right: 10px;"></a>
+  <a href="https://www.linkedin.com/in/cameron-levine-930242214"><img src="/./images/LI-In-Bug.png" style="height: 40px;"></a>
+</div>
