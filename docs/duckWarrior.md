@@ -11,7 +11,7 @@ permalink: /duckWarrior/
 
 Duck Warrior is a 2D platformer where you control a duck with a knife strapped to his chest attempting to get his hat back. Each stage is an arena, where you have to kill waves of enemies before facing off against a boss. It was a fun project with an absurd concept that made my first game in Unity a memorable one.
 
-![image](./images/dWConceptArt.jpg)
+<img src="/./images/dWConceptArt.jpg" style="height: 200px;">
 
 The starting inspiration for Duck Warrior was the game “Joust”, an Atari game where you joust on an ostrich. From this, we derived two things: ramming into enemies in order to kill them, and birds. Unlike its inspiration, however, Duck Warrior focuses less on 1v1 battles against similar enemies and focuses more on level progression and boss fights. 
 
@@ -24,7 +24,7 @@ In the spirit of the game’s bird theme, we wanted to make the player’s jumpi
 The general design of the game was to be set in arena levels where the player must defeat all the enemies before taking on the boss. Spawning in new enemies after the initial enemies allowed for the fairly compact levels to still throw new obstacles at the player. 
 
 ![image](./images/dWPidgeon.gif)
-![image](./images/dWRobin.gif)
+<img src="/./images/dWRobin.gif" style="height: 200px;">
 
 The enemies either patrol an area of the level, or chase after the player. While the first level’s enemies are the least threatening, with their weapons at a fixed position, the second and third level’s enemies swing their weapons, making the player be more cautious in attacking them.
 
