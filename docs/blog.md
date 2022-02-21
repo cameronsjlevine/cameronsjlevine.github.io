@@ -3,7 +3,7 @@ layout: default
 title: Blog
 permalink: /blog/
 ---
-# Blog
+## Blog
 
 Here I'll post about whatever it is I'm currently working on game-wise. 
 
