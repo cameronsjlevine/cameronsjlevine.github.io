@@ -54,7 +54,8 @@ The general design of the game was to be set in arena levels where the player mu
 
 The enemies either patrol an area of the level, or chase after the player. While the first level’s enemies are the least threatening, with their weapons at a fixed position, the second and third level’s enemies swing their weapons, making them a bigger threat. 
 
-```C#
+<details><summary><h3><a>Enemy Chaser Movement Snippet</a></h3></summary>
+{% highlight csharp %}
 void Update()
     {
         if(GameObject.Find("PlayerDuck").transform.position.x < transform.position.x) //if the player is to the left...
@@ -84,13 +85,15 @@ void Update()
         Move(new Vector2(playerX, playerY)); //move towards the player based on their x and y directions relative to this object.
         FlipSprite(); //flip this object's sprite based on its current movement.
     }
-```
+{% endhighlight %}
+</details>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Xb2TY1SBMlI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Designing the bosses was a highlight for me, as coming up with new ways to make each boss fight different and challenging was fun. Each boss requires a different strategy to defeat it, with each boss being harder than the last, culminating with a multi-phase final boss fight. 
 
-```C#
+<details><summary><h3><a>Final Boss Health Snippet</a></h3></summary>
+{% highlight csharp %}
 void Update()
     {
         if (currentHealth <= -1) //if boss's health is below 0...
@@ -122,8 +125,9 @@ void Update()
             }
         }
     }
-```
-
+{% endhighlight %}
+</details>
+    
 <hr>
 
 <div style="text-align: center;">
