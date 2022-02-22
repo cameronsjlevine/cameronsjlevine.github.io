@@ -22,10 +22,24 @@ The starting inspiration for Duck Warrior was the game “Joust”, an Atari gam
 In the spirit of the game’s bird theme, we wanted to make the player’s jumping fluttery. By making the jumps short and quick, we managed to not only simulate the flapping of wings, but to also give the player finer control while jumping. Speed was also an important aspect, since the way to kill enemies is by ramming into them, so the controls needed to feel fast but not uncontrollable.
 
 ```C#
-void Update()
+public void Move(Vector2 direction) //function that handles the player movement, as well as movement animations.
     {
-        Move(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))); //get keyboard input for player movement
-        FlipSprite(); //flip player sprite in accordance to which direction they should be facing
+        if (Mathf.Abs(direction.x) > .01f) //if input in the x direction is detected...
+        {
+            rb.velocity = new Vector2(moveSpeed * direction.x, rb.velocity.y); //...add velocity in that direction...
+            playerAnimator.SetBool("walkingRight", true); //...and play the walking animation.
+        }
+        else //if no input is detected...
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y); //...stop any x movement...
+            playerAnimator.SetBool("walkingRight", false); //...stop the walking animation...
+            playerAnimator.SetBool("jumping", false); //...and stop the jumping animation.
+        }
+        if (Input.GetKeyDown("j")) //if the j key is pressed...
+        {
+            rb.AddForce(new Vector2(0, 3), ForceMode2D.Impulse); //...add upward force to make the player jump...
+            playerAnimator.SetBool("jumping", true); //...and play the jumping animation.
+        }
     }
 ```
 
