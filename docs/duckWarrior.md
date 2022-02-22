@@ -88,6 +88,40 @@ void Update()
 
 Designing the bosses was a highlight for me, as coming up with new ways to make each boss fight different and challenging was fun. Each boss requires a different strategy to defeat it, with each boss being harder than the last, culminating with a multi-phase final boss fight. 
 
+```C#
+void Update()
+    {
+        if (currentHealth <= -1) //if boss's health is below 0...
+        {
+            GameObject.Find("DeathSound").GetComponent<AudioSource>().Play(); //...play the boss death sound...
+            Destroy(gameObject); //...and destroy the boss gameObject.
+        } 
+        else if(currentHealth == 3) //if boss's health is exactly 3...
+        {
+            GameObject.Find("DeathSound").GetComponent<AudioSource>().Play(); //...play the boss death sound...
+            Destroy(transform.GetChild(2).gameObject); //...destroy the first-phase weapon (in this case, the falcon)...
+            currentHealth--; //...and lower health by 1.
+        }
+        if (frames) //if the boss has invincibility frames, then flash the sprite red and white repeatedly until the time limit is up.
+        {
+            timeRemaining -= Time.deltaTime;
+            if (timeRemaining <= 0)
+            {
+                frames = false;
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            else if (timeRemaining >= 1.75 || timeRemaining >= 1.25 && timeRemaining <= 1.5 || timeRemaining >= 0.75 && timeRemaining <= 1.0 || timeRemaining >= 0.25                      && timeRemaining <= 0.5)
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+        }
+    }
+```
+
 <hr>
 
 <div style="text-align: center;">
