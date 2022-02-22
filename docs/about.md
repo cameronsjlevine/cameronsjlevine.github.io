@@ -3,6 +3,8 @@ layout: default
 title: About
 permalink: /about/
 ---
+<h1 id="titleSection"></h1>
+
 ## About
 <img src="/./images/profilePic.jpg" style="width: 500px;">
 
