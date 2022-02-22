@@ -23,7 +23,6 @@ In the spirit of the game’s bird theme, we wanted to make the player’s jumpi
 
 <details><summary>Player Movement Snippet</summary>
 {% highlight csharp %}
-```
 public void Move(Vector2 direction) //function that handles the player movement, as well as movement animations.
     {
         if (Mathf.Abs(direction.x) > .01f) //if input in the x direction is detected...
@@ -43,7 +42,6 @@ public void Move(Vector2 direction) //function that handles the player movement,
             playerAnimator.SetBool("jumping", true); //...and play the jumping animation.
         }
     }
-```
 {% endhighlight %}
 </details>
     
