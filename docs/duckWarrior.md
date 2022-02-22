@@ -50,7 +50,7 @@ public void Move(Vector2 direction) //function that handles the player movement,
 The general design of the game was to be set in arena levels where the player must defeat all the enemies before taking on the boss. Spawning in new enemies after the initial enemies allowed for the fairly compact levels to still throw new obstacles at the player, and to provide a greater challenge. 
 
 ![image](./images/dWPidgeon.gif)
-<img src="/./images/dWRobin.gif" style="height: 200px;">
+<img src="/./images/dWRobin.gif" style="height: 200px; display: block; margin: auto;">
 
 The enemies either patrol an area of the level, or chase after the player. While the first level’s enemies are the least threatening, with their weapons at a fixed position, the second and third level’s enemies swing their weapons, making them a bigger threat. 
 
