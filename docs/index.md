@@ -7,7 +7,7 @@ title: Home
 <h1 id="gameSection"></h1>   
 
 ## [Duck Warrior](https://cameronsjlevine.github.io/duckWarrior)
-[![image](./images/duckWarriorIcon2.jpg)](https://cameronsjlevine.github.io/duckWarrior)
+[![image](./images/duckWarriorIcon2.jpg)](https://cameronsjlevine.github.io/duckWarrior#titleSection)
 
 - Duck Warrior is a 2D platformer
 - Programming, game design, and implementing assets into Unity were my responsibilities
