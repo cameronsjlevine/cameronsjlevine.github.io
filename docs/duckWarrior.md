@@ -115,7 +115,7 @@ void Update()
                 frames = false;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             }
-            else if (timeRemaining >= 1.75 || timeRemaining >= 1.25 && timeRemaining <= 1.5 || timeRemaining >= 0.75 && timeRemaining <= 1.0 || timeRemaining >= 0.25                      && timeRemaining <= 0.5)
+            else if (timeRemaining >= 1.75 || timeRemaining >= 1.25 && timeRemaining <= 1.5 || timeRemaining >= 0.75 && timeRemaining <= 1.0 || timeRemaining >= 0.25 && timeRemaining <= 0.5)
             {
                 gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             }
