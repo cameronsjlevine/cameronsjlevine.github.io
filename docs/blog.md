@@ -3,6 +3,8 @@ layout: default
 title: Blog
 permalink: /blog/
 ---
+<h1 id="titleSection"></h1>
+
 ## Blog
 
 Here I'll post about whatever it is I'm currently working on game-wise. 
