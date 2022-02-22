@@ -4,7 +4,7 @@ title: Home
 ---
 <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
 
-My name is Cameron Levine, and this is my video game development portfolio. Here you will find information on some of the projects I have worked on in the past, detailing my experiences in making games. 
+My name is Cameron Levine, and this is my video game development portfolio. Here you will find information on some of the projects I have worked on in the past, detailing my experiences in making games. You can also find my [resume](https://cameronsjlevine.github.io/resume/#titleSection) for a more condensed and formal version of my experience, as well as a brief section [about me](https://cameronsjlevine.github.io/about/#titleSection). 
 
 <h1 id="gameSection"></h1>   
 
