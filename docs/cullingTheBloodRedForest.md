@@ -19,10 +19,12 @@ Culling the Blood Red Forest is a 3D shooter where you speed around stages killi
 
 We wanted the game to be a fast-paced arena shooter, and the solution we came up with was to make the player’s movement slightly slippery. To keep the speed going, we also decided to make the walls bouncy, which really helped to keep the player on the move. Since Unity's physics are a bit naturally floaty, it only took a little bit of tinkering around to achieve the desired effect. 
 
+## Gun Design
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z0DqILvfO2U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; margin: auto; padding-bottom: 20px;"></iframe>
 
 The guns were designed to be different in the way that each of them shoot. The pistol shoots a single small shot, the shotgun shoots a burst of pellets, the grenade launcher lobs a large grenade, and the LMG shoots three bullets at once rapidly. The slippery movement also meant that the recoil of the guns could be used to push oneself backwards, allowing the player to slow down or to move backwards outright. The recoil of the LMG is so high, in fact, that you can use it to fly around the stage, making it just as fun to use as it is uncontrollable. 
 
+## Enemy AI
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TaFPCp-oTN8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; margin: auto; padding-bottom: 20px;"></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QZPnPXs7XdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; margin: auto; padding-bottom: 20px;"></iframe>
