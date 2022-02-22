@@ -4,6 +4,8 @@ title: Home
 ---
 <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
 
+My name is Cameron Levine, and this is my video game development portfolio. Here you will find information on some of the projects I have worked on in the past, detailing my experiences in making games. 
+
 <h1 id="gameSection"></h1>   
 
 ## [Duck Warrior](https://cameronsjlevine.github.io/duckWarrior/#titleSection)
