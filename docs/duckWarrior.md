@@ -21,7 +21,7 @@ The starting inspiration for Duck Warrior was the game “Joust”, an Atari gam
 
 In the spirit of the game’s bird theme, we wanted to make the player’s jumping fluttery. By making the jumps short and quick, we managed to not only simulate the flapping of wings, but to also give the player finer control while jumping. Speed was also an important aspect, since the way to kill enemies is by ramming into them, so the controls needed to feel fast but not uncontrollable.
 
-<details><summary><h1><a>Player Movement Snippet</a></h1></summary>
+<details><summary><h3><a>Player Movement Snippet</a></h3></summary>
 {% highlight csharp %}
 public void Move(Vector2 direction) //function that handles the player movement, as well as movement animations.
     {
