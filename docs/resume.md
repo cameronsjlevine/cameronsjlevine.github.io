@@ -3,6 +3,7 @@ layout: default
 title: Resume
 permalink: /resume/
 ---  
+<h1 id="titleSection"></h1>
 
 ## Resume
 
