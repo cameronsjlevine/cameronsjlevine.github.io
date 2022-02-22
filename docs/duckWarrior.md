@@ -23,7 +23,7 @@ The starting inspiration for Duck Warrior was the game “Joust”, an Atari gam
 
 In the spirit of the game’s bird theme, we wanted to make the player’s jumping fluttery. By making the jumps short and quick, we managed to not only simulate the flapping of wings, but to also give the player finer control while jumping. Speed was also an important aspect, since the way to kill enemies is by ramming into them, so the controls needed to feel fast but not uncontrollable.
 
-<details><summary><h3><a>Player Movement Snippet</a></h3></summary>
+<details><summary><h3><a style="cursor: pointer;">Player Movement Snippet</a></h3></summary>
 {% highlight csharp %}
 public void Move(Vector2 direction) //function that handles the player movement, as well as movement animations.
     {
@@ -58,7 +58,7 @@ The general design of the game was to be set in arena levels where the player mu
 
 The enemies either patrol an area of the level, or chase after the player. While the first level’s enemies are the least threatening, with their weapons at a fixed position, the second and third level’s enemies swing their weapons, making them a bigger threat. 
 
-<details><summary><h3><a>Enemy Chaser Movement Snippet</a></h3></summary>
+<details><summary><h3><a style="cursor: pointer;">Enemy Chaser Movement Snippet</a></h3></summary>
 {% highlight csharp %}
 void Update()
     {
@@ -97,7 +97,7 @@ void Update()
 
 Designing the bosses was a highlight for me, as coming up with new ways to make each boss fight different and challenging was fun. Each boss requires a different strategy to defeat it, with each boss being harder than the last, culminating with a multi-phase final boss fight. 
 
-<details><summary><h3><a>Final Boss Health Snippet</a></h3></summary>
+<details><summary><h3><a style="cursor: pointer;">Final Boss Health Snippet</a></h3></summary>
 {% highlight csharp %}
 void Update()
     {
