@@ -52,6 +52,38 @@ The general design of the game was to be set in arena levels where the player mu
 
 The enemies either patrol an area of the level, or chase after the player. While the first level’s enemies are the least threatening, with their weapons at a fixed position, the second and third level’s enemies swing their weapons, making them a bigger threat. 
 
+```C#
+void Update()
+    {
+        if(GameObject.Find("PlayerDuck").transform.position.x < transform.position.x) //if the player is to the left...
+        {
+            playerX = -1; //...set playerX in the left direction;
+        }
+        else if(GameObject.Find("PlayerDuck").transform.position.x > transform.position.x) //else if the player is to the right...
+        {
+            playerX = 1; //...set playerX in the right direction;
+        }
+        else //else if the player is neither to the left nor right...
+        {
+            playerX = 0; //...set playerX in neither direction.
+        }
+        if(GameObject.Find("PlayerDuck").transform.position.y < transform.position.y) //if the player is below...
+        {
+            playerY = -1; //...set playerY to be below;
+        }
+        else if (GameObject.Find("PlayerDuck").transform.position.y > transform.position.y) //else if the player is above...
+        {
+            playerY = 1; //...set playerY to be above;
+        }
+        else //else if the player is neither below nor above...
+        {
+            playerY = 0; //...set playerY to be neither below nor above.
+        }
+        Move(new Vector2(playerX, playerY)); //move towards the player based on their x and y directions relative to this object.
+        FlipSprite(); //flip this object's sprite based on its current movement.
+    }
+```
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Xb2TY1SBMlI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Designing the bosses was a highlight for me, as coming up with new ways to make each boss fight different and challenging was fun. Each boss requires a different strategy to defeat it, with each boss being harder than the last, culminating with a multi-phase final boss fight. 
