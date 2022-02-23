@@ -54,7 +54,44 @@ The guns were designed to be different in the way that each of them shoot. The p
 
 <details><summary><h3><a style="cursor: pointer;">Gun Shot Snippet</a></h3></summary>
 {% highlight csharp %}
+void FixedUpdate()
+    {
+        if (cooldownActivated && ammunition > 0 || infiniteAmmo == true) //if the player has shot and has infinite ammo...
+        {
+            cooldownSeconds -= Time.deltaTime;
+            if(cooldownSeconds < 0) //...prevent shooting again for cooldownSeconds seconds;
+            {
+                cooldownActivated = false;
+                cooldownSeconds = initialSeconds;
+            }
+        }
+        else if (cooldownActivated && ammunition <= 0) //else if the player has shot and has no ammunition...
+        {
+            cooldownSeconds -= Time.deltaTime;
+            if (cooldownSeconds < -2) //...prevent shooting again for cooldownSeconds seconds plus two seconds.
+            {
+                cooldownActivated = false;
+                cooldownSeconds = initialSeconds;
+                ammunition = initialAmmunition;
+            }
+        }
+        if (Input.GetMouseButton(0) == true && cooldownActivated == false) //if the left mouse button is clicked and cooldown isn't activated...
+        {
+            shotSoundEffect.Play(0); //...play the gunshot sound effect...
+            Rigidbody bullet;
+            bullet = Instantiate(bulletObject, spawnLocation.transform.position, camera.transform.rotation); //...spawn a bullet...
+            bullet.gameObject.transform.Rotate(bullet.gameObject.transform.rotation.x, customBulletRotation, 0); //...orient the bullet correctly...
+            bullet.gameObject.GetComponent<MeshRenderer>().enabled = true; //...let the bullet be seen...
+            bullet.gameObject.SetActive(true); //...activate the bullet...
+            bullet.AddForce(camera.transform.forward * acceleration); //...add forward force to the bullet...
 
+            player.GetComponent<Rigidbody>().AddForce(-camera.transform.forward.x*recoil, -camera.transform.forward.y*recoilY, -camera.transform.forward.z*recoil); //...apply recoil to the player...
+
+            ammunition--; //...remove ammunition...
+
+            cooldownActivated = true; //...and activate the cooldown.
+        }
+    }
 {% endhighlight %}
 </details>
 
