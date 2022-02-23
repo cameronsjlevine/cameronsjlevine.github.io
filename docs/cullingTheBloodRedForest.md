@@ -104,7 +104,64 @@ The enemies' AI is programmed to wander around while not near the player, but if
 
 <details><summary><h3><a style="cursor: pointer;">Enemy AI Snippet</a></h3></summary>
 {% highlight csharp %}
-
+void FixedUpdate()
+    {
+        if (boundaryBounce) //if the enemy runs into a level boundary...
+        {
+            boundaryBounceTime -= Time.deltaTime;
+            if (boundaryBounceTime <= 0)
+            {
+                boundaryBounce = false;
+            }
+            rb.AddForce(transform.forward * acceleration); //...add force in the opposite direction of the boundary for boundaryBounceTime seconds.
+        }
+        else if (chaser && Vector3.Distance(transform.position, player.transform.position) < minimumDistance) //if the enemy chases and the player is within a minimumDistance radius...
+        {
+            animator.SetBool("isRunning", true); //...play moving animations...
+            transform.LookAt(player.transform);
+            rb.AddForce(transform.forward * acceleration); //...add force to run towards the player;
+            standingTime = initialStandingTime;
+            movingTime = initialMovingTime;
+            isMoving = false;
+            isStanding = true;
+        }
+        else if (Vector3.Distance(transform.position, player.transform.position) < minimumDistance) //else if the enemy doesn't chase and the player is within a minimumDistance radius...
+        {
+            animator.SetBool("isRunning", true); //...play moving animations...
+            playerPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+            transform.LookAt(playerPosition);
+            transform.Rotate(0, 180, 0);
+            rb.AddForce(transform.forward * acceleration); //...add force to run away from the player.
+            standingTime = initialStandingTime;
+            movingTime = initialMovingTime;
+            isMoving = false;
+            isStanding = true;
+        }
+        else if (isMoving) //if the enemy is in an idle moving state...
+        {
+            movingTime -= Time.deltaTime;
+            animator.SetBool("isRunning", true); //...play moving animations...
+            if (movingTime <= 0)
+            {
+                isMoving = false;
+                isStanding = true;
+                movingTime = initialMovingTime;
+            }
+            rb.AddForce(transform.forward * acceleration); //...and add force in a random direction.
+        }
+        else if (isStanding) //if the enemy is in an idle standing state...
+        {
+            standingTime -= Time.deltaTime;
+            animator.SetBool("isRunning", false); //...don't play animations...
+            if (standingTime <= 0)
+            {
+                isMoving = true;
+                isStanding = false;
+                standingTime = initialStandingTime;
+                transform.Rotate(new Vector3(0, Random.Range(0.0f, 360.0f), 0)); //...and rotate to a new direction.
+            }
+        }
+    }
 {% endhighlight %}
 </details>
 
