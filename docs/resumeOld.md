@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Resume
-permalink: /resume/
+permalink: /resumeOld/
 ---  
 <h1 id="titleSection"></h1>
 
