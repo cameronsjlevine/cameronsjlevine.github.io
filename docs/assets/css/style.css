@@ -1,0 +1,60 @@
+body {
+    background-color: lightgrey;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#head {
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #484848;
+    color: white;
+}
+
+.menu-right {
+    float: right;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.menu-right:active {
+    color: black;
+}
+
+.menu-right:visited {
+    color: white;
+}
+
+.space {
+    width: 100%;
+    height: 50px;
+}
+
+#title {
+    margin-left: 500px;
+    margin-right: 500px;
+    text-align: center;
+}
+
+#content {
+    margin-left: 500px;
+    margin-right: 500px;
+    text-align: left;
+}
+
+#content a {
+    color: #D86338;
+    text-decoration: none;
+}
+
+#content a:visited {
+    color: #D86338;
+}
+
+@media (max-width: 875px) {
+  #head {
+    display: none;
+  }
+}
