@@ -17,6 +17,7 @@ body {
     float: right;
     margin: 10px;
     text-decoration: none;
+    margin-top: 24px;
 }
 
 .menu-right:active {
