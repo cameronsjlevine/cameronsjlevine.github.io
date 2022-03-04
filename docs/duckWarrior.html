@@ -49,27 +49,27 @@
 
         <details>
             <summary><a style="cursor: pointer;">Player Movement Snippet</a></summary>
-            ```csharp
-            public void Move(Vector2 direction) //function that handles the player movement, as well as movement animations.
+            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Move(Vector2 direction) <span style="color: #008000">//function that handles the player movement, as well as movement animations.</span>
             {
-            if (Mathf.Abs(direction.x) > .01f) //if input in the x direction is detected...
+            <span style="color: #0000ff">if</span> (Mathf.Abs(direction.x) &gt; .01f) <span style="color: #008000">//if input in the x direction is detected...</span>
             {
-            rb.velocity = new Vector2(moveSpeed * direction.x, rb.velocity.y); //...add velocity in that direction...
-            playerAnimator.SetBool("walkingRight", true); //...and play the walking animation.
+            rb.velocity = <span style="color: #0000ff">new</span> Vector2(moveSpeed * direction.x, rb.velocity.y); <span style="color: #008000">//...add velocity in that direction...</span>
+            playerAnimator.SetBool(<span style="color: #a31515">&quot;walkingRight&quot;</span>, <span style="color: #0000ff">true</span>); <span style="color: #008000">//...and play the walking animation.</span>
             }
-            else //if no input is detected...
+            <span style="color: #0000ff">else</span> <span style="color: #008000">//if no input is detected...</span>
             {
-            rb.velocity = new Vector2(0f, rb.velocity.y); //...stop any x movement...
-            playerAnimator.SetBool("walkingRight", false); //...stop the walking animation...
-            playerAnimator.SetBool("jumping", false); //...and stop the jumping animation.
+            rb.velocity = <span style="color: #0000ff">new</span> Vector2(0f, rb.velocity.y); <span style="color: #008000">//...stop any x movement...</span>
+            playerAnimator.SetBool(<span style="color: #a31515">&quot;walkingRight&quot;</span>, <span style="color: #0000ff">false</span>); <span style="color: #008000">//...stop the walking animation...</span>
+            playerAnimator.SetBool(<span style="color: #a31515">&quot;jumping&quot;</span>, <span style="color: #0000ff">false</span>); <span style="color: #008000">//...and stop the jumping animation.</span>
             }
-            if (Input.GetKeyDown("j")) //if the j key is pressed...
+            <span style="color: #0000ff">if</span> (Input.GetKeyDown(<span style="color: #a31515">&quot;j&quot;</span>)) <span style="color: #008000">//if the j key is pressed...</span>
             {
-            rb.AddForce(new Vector2(0, 3), ForceMode2D.Impulse); //...add upward force to make the player jump...
-            playerAnimator.SetBool("jumping", true); //...and play the jumping animation.
+            rb.AddForce(<span style="color: #0000ff">new</span> Vector2(0, 3), ForceMode2D.Impulse); <span style="color: #008000">//...add upward force to make the player jump...</span>
+            playerAnimator.SetBool(<span style="color: #a31515">&quot;jumping&quot;</span>, <span style="color: #0000ff">true</span>); <span style="color: #008000">//...and play the jumping animation.</span>
             }
             }
-            ```
+</pre></div>
+
         </details>
 
         <h2>Level Design</h2>
