@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+permalink: /indexOld/
 ---
 <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
 
