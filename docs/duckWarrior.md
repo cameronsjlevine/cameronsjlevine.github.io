@@ -48,7 +48,7 @@
 
         <details>
             <summary><a style="cursor: pointer;">Player Movement Snippet</a></summary>
-            {% highlight csharp %}
+            ```csharp
             public void Move(Vector2 direction) //function that handles the player movement, as well as movement animations.
             {
             if (Mathf.Abs(direction.x) > .01f) //if input in the x direction is detected...
@@ -68,7 +68,7 @@
             playerAnimator.SetBool("jumping", true); //...and play the jumping animation.
             }
             }
-            {% endhighlight %}
+            ```
         </details>
 
         <h2>Level Design</h2>
