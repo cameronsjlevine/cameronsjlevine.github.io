@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Culling the Blood Red Forest
-permalink: /cullingTheBloodRedForest/
+permalink: /cullingTheBloodRedForestOld/
 ---
 <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
 
