@@ -54,8 +54,4 @@ body {
     color: #D86338;
 }
 
-@media (max-width: 875px) {
-  #head {
-    display: none;
-  }
-}
+
