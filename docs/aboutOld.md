@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About
-permalink: /about/
+permalink: /aboutOld/
 ---
 <h1 id="titleSection"></h1>
 
