@@ -50,25 +50,26 @@
         <details>
             <summary><a style="cursor: pointer;">Player Movement Snippet</a></summary>
             <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; background-color: #484848; color: white;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">Move</span><span style="color: #f8f8f2">(Vector2</span> <span style="color: #f8f8f2">direction)</span> <span style="color: #75715e">//function that handles the player movement, as well as movement animations.</span>
-            <span style="color: #f8f8f2">{</span>
-            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(Mathf.Abs(direction.x)</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #f8f8f2">.</span><span style="color: #ae81ff">01f</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if input in the x direction is detected...</span>
-            <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(Mathf.Abs(direction.x)</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #f8f8f2">.</span><span style="color: #ae81ff">01f</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if input in the x direction is detected...</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">rb.velocity</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Vector2(moveSpeed</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">direction.x,</span> <span style="color: #f8f8f2">rb.velocity.y);</span> <span style="color: #75715e">//...add velocity in that direction...</span>
             <span style="color: #f8f8f2">playerAnimator.SetBool(</span><span style="color: #e6db74">&quot;walkingRight&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">//...and play the walking animation.</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #66d9ef">else</span> <span style="color: #75715e">//if no input is detected...</span>
-            <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #66d9ef">else</span> <span style="color: #75715e">//if no input is detected...</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">rb.velocity</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Vector2(</span><span style="color: #ae81ff">0f</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">rb.velocity.y);</span> <span style="color: #75715e">//...stop any x movement...</span>
             <span style="color: #f8f8f2">playerAnimator.SetBool(</span><span style="color: #e6db74">&quot;walkingRight&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">//...stop the walking animation...</span>
             <span style="color: #f8f8f2">playerAnimator.SetBool(</span><span style="color: #e6db74">&quot;jumping&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">//...and stop the jumping animation.</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(Input.GetKeyDown(</span><span style="color: #e6db74">&quot;j&quot;</span><span style="color: #f8f8f2">))</span> <span style="color: #75715e">//if the j key is pressed...</span>
-            <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(Input.GetKeyDown(</span><span style="color: #e6db74">&quot;j&quot;</span><span style="color: #f8f8f2">))</span> <span style="color: #75715e">//if the j key is pressed...</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">rb.AddForce(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Vector2(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">),</span> <span style="color: #f8f8f2">ForceMode2D.Impulse);</span> <span style="color: #75715e">//...add upward force to make the player jump...</span>
             <span style="color: #f8f8f2">playerAnimator.SetBool(</span><span style="color: #e6db74">&quot;jumping&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">//...and play the jumping animation.</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #f8f8f2">}</span>
-            </pre></div>
+        <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+</pre></div>
+
         </details>
 
         <h2>Level Design</h2>
@@ -84,35 +85,36 @@
 
         <details><summary><a style="cursor: pointer;">Enemy Chaser Movement Snippet</a></summary>
             <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; background-color: #484848; color: white;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">void</span> <span style="color: #a6e22e">Update</span><span style="color: #f8f8f2">()</span>
-            <span style="color: #f8f8f2">{</span>
-            <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(GameObject.Find(</span><span style="color: #e6db74">&quot;PlayerDuck&quot;</span><span style="color: #f8f8f2">).transform.position.x</span> <span style="color: #f8f8f2">&lt;</span> <span style="color: #f8f8f2">transform.position.x)</span> <span style="color: #75715e">//if the player is to the left...</span>
-            <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(GameObject.Find(</span><span style="color: #e6db74">&quot;PlayerDuck&quot;</span><span style="color: #f8f8f2">).transform.position.x</span> <span style="color: #f8f8f2">&lt;</span> <span style="color: #f8f8f2">transform.position.x)</span> <span style="color: #75715e">//if the player is to the left...</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">playerX</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//...set playerX in the left direction;</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span><span style="color: #f8f8f2">(GameObject.Find(</span><span style="color: #e6db74">&quot;PlayerDuck&quot;</span><span style="color: #f8f8f2">).transform.position.x</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #f8f8f2">transform.position.x)</span> <span style="color: #75715e">//else if the player is to the right...</span>
-            <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span><span style="color: #f8f8f2">(GameObject.Find(</span><span style="color: #e6db74">&quot;PlayerDuck&quot;</span><span style="color: #f8f8f2">).transform.position.x</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #f8f8f2">transform.position.x)</span> <span style="color: #75715e">//else if the player is to the right...</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">playerX</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//...set playerX in the right direction;</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #66d9ef">else</span> <span style="color: #75715e">//else if the player is neither to the left nor right...</span>
-            <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #66d9ef">else</span> <span style="color: #75715e">//else if the player is neither to the left nor right...</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">playerX</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//...set playerX in neither direction.</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(GameObject.Find(</span><span style="color: #e6db74">&quot;PlayerDuck&quot;</span><span style="color: #f8f8f2">).transform.position.y</span> <span style="color: #f8f8f2">&lt;</span> <span style="color: #f8f8f2">transform.position.y)</span> <span style="color: #75715e">//if the player is below...</span>
-            <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(GameObject.Find(</span><span style="color: #e6db74">&quot;PlayerDuck&quot;</span><span style="color: #f8f8f2">).transform.position.y</span> <span style="color: #f8f8f2">&lt;</span> <span style="color: #f8f8f2">transform.position.y)</span> <span style="color: #75715e">//if the player is below...</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">playerY</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//...set playerY to be below;</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f8f8f2">(GameObject.Find(</span><span style="color: #e6db74">&quot;PlayerDuck&quot;</span><span style="color: #f8f8f2">).transform.position.y</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #f8f8f2">transform.position.y)</span> <span style="color: #75715e">//else if the player is above...</span>
-            <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f8f8f2">(GameObject.Find(</span><span style="color: #e6db74">&quot;PlayerDuck&quot;</span><span style="color: #f8f8f2">).transform.position.y</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #f8f8f2">transform.position.y)</span> <span style="color: #75715e">//else if the player is above...</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">playerY</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//...set playerY to be above;</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #66d9ef">else</span> <span style="color: #75715e">//else if the player is neither below nor above...</span>
-            <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #66d9ef">else</span> <span style="color: #75715e">//else if the player is neither below nor above...</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">playerY</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//...set playerY to be neither below nor above.</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #f8f8f2">Move(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Vector2(playerX,</span> <span style="color: #f8f8f2">playerY));</span> <span style="color: #75715e">//move towards the player based on their x and y directions relative to this object.</span>
-            <span style="color: #f8f8f2">FlipSprite();</span> <span style="color: #75715e">//flip this object&#39;s sprite based on its current movement.</span>
-            <span style="color: #f8f8f2">}</span>
-            </pre></div>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">Move(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Vector2(playerX,</span> <span style="color: #f8f8f2">playerY));</span> <span style="color: #75715e">//move towards the player based on their x and y directions relative to this object.</span>
+        <span style="color: #f8f8f2">FlipSprite();</span> <span style="color: #75715e">//flip this object&#39;s sprite based on its current movement.</span>
+    <span style="color: #f8f8f2">}</span>
+</pre></div>
+
         </details>
 
         <h2>Boss Design</h2>
@@ -123,37 +125,39 @@
         <details>
             <summary><a style="cursor: pointer;">Final Boss Health Snippet</a></summary>
             <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; background-color: #484848; color: white;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">void</span> <span style="color: #a6e22e">Update</span><span style="color: #f8f8f2">()</span>
-            <span style="color: #f8f8f2">{</span>
-            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(currentHealth</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #f8f8f2">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if boss&#39;s health is below 0...</span>
-            <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(currentHealth</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #f8f8f2">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if boss&#39;s health is below 0...</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">GameObject.Find(</span><span style="color: #e6db74">&quot;DeathSound&quot;</span><span style="color: #f8f8f2">).GetComponent&lt;AudioSource&gt;().Play();</span> <span style="color: #75715e">//...play the boss death sound...</span>
             <span style="color: #f8f8f2">Destroy(gameObject);</span> <span style="color: #75715e">//...and destroy the boss gameObject.</span>
-            <span style="color: #f8f8f2">}</span> 
-            <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span><span style="color: #f8f8f2">(currentHealth</span> <span style="color: #f8f8f2">==</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if boss&#39;s health is exactly 3...</span>
-            <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">}</span> 
+        <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span><span style="color: #f8f8f2">(currentHealth</span> <span style="color: #f8f8f2">==</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if boss&#39;s health is exactly 3...</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">GameObject.Find(</span><span style="color: #e6db74">&quot;DeathSound&quot;</span><span style="color: #f8f8f2">).GetComponent&lt;AudioSource&gt;().Play();</span> <span style="color: #75715e">//...play the boss death sound...</span>
             <span style="color: #f8f8f2">Destroy(transform.GetChild(</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">).gameObject);</span> <span style="color: #75715e">//...destroy the first-phase weapon (in this case, the falcon)...</span>
             <span style="color: #f8f8f2">currentHealth--;</span> <span style="color: #75715e">//...and lower health by 1.</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(frames)</span> <span style="color: #75715e">//if the boss has invincibility frames, then flash the sprite red and white repeatedly until the time limit is up.</span>
-            <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(frames)</span> <span style="color: #75715e">//if the boss has invincibility frames, then flash the sprite red and white repeatedly until the time limit is up.</span>
+        <span style="color: #f8f8f2">{</span>
             <span style="color: #f8f8f2">timeRemaining</span> <span style="color: #f8f8f2">-=</span> <span style="color: #f8f8f2">Time.deltaTime;</span>
             <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(timeRemaining</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
             <span style="color: #f8f8f2">{</span>
-            <span style="color: #f8f8f2">frames</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
-            <span style="color: #f8f8f2">gameObject.GetComponent&lt;SpriteRenderer&gt;().color</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">Color.white;</span>
+                <span style="color: #f8f8f2">frames</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
+                <span style="color: #f8f8f2">gameObject.GetComponent&lt;SpriteRenderer&gt;().color</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">Color.white;</span>
             <span style="color: #f8f8f2">}</span>
             <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f8f8f2">(timeRemaining</span> <span style="color: #f8f8f2">&gt;=</span> <span style="color: #ae81ff">1.75</span> <span style="color: #f8f8f2">||</span> <span style="color: #f8f8f2">timeRemaining</span> <span style="color: #f8f8f2">&gt;=</span> <span style="color: #ae81ff">1.25</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">timeRemaining</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">1.5</span> <span style="color: #f8f8f2">||</span> <span style="color: #f8f8f2">timeRemaining</span> <span style="color: #f8f8f2">&gt;=</span> <span style="color: #ae81ff">0.75</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">timeRemaining</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">1.0</span> <span style="color: #f8f8f2">||</span> <span style="color: #f8f8f2">timeRemaining</span> <span style="color: #f8f8f2">&gt;=</span> <span style="color: #ae81ff">0.25</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">timeRemaining</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">0.5</span><span style="color: #f8f8f2">)</span>
             <span style="color: #f8f8f2">{</span>
-            <span style="color: #f8f8f2">gameObject.GetComponent&lt;SpriteRenderer&gt;().color</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">Color.red;</span>
+                <span style="color: #f8f8f2">gameObject.GetComponent&lt;SpriteRenderer&gt;().color</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">Color.red;</span>
             <span style="color: #f8f8f2">}</span>
             <span style="color: #66d9ef">else</span>
             <span style="color: #f8f8f2">{</span>
-            <span style="color: #f8f8f2">gameObject.GetComponent&lt;SpriteRenderer&gt;().color</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">Color.white;</span>
+                <span style="color: #f8f8f2">gameObject.GetComponent&lt;SpriteRenderer&gt;().color</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">Color.white;</span>
             <span style="color: #f8f8f2">}</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #f8f8f2">}</span>
-            </pre></div>
+        <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+</pre></div>
+
+
         </details>
 
         <hr>
