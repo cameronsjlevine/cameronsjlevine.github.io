@@ -1,0 +1,177 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--<body style="background-image: url(../images/background.png); background-position: center; background-size: 850px;  background-repeat: no-repeat; background-color: black;">-->
+    <section style="margin: auto;">
+        <div class="wrapper">
+            <a id="homeSection"></a>
+            <div id="head">
+                <a class="downloads" style="width: 64px; height: 64px;"><img src="../images/roundedIcon.png"></a>
+                <a class="menu-right" href="https://cameronsjlevine.github.io/about/#titleSection">About</a>
+                <a class="menu-right" href="https://cameronsjlevine.github.io/resume/#titleSection">Resume</a>
+                <!--<li class="downloads"><a href="https://cameronsjlevine.github.io/blog/">Blog</a></li>-->
+                <a class="menu-right" href="https://cameronsjlevine.github.io#gameSection">Games</a>
+                <a class="menu-right" href="https://cameronsjlevine.github.io#homeSection">Home</a>
+            </div><!-- end header -->
+        </div>
+        <div class="space">
+            &nbsp;
+        </div>
+        <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+
+        <h1 id="titleSection"></h1>
+
+        <h1>Duck Warrior</h1>
+        <a href="https://cameronsjlevine.github.io/duckWarrior/#titleSection"><img src="./images/duckWarriorIcon2.jpg" style="width: 600px; display: block; margin: auto;" /></a>
+        <iframe src="https://itch.io/embed/1020257" height="167" width="552" frameborder="0" style="display: block; margin:auto; padding-bottom: 20px;"><a href="https://cameronlevine.itch.io/duck-warrior">Duck Warrior by cameronlevine</a></iframe>
+
+        <p>Duck Warrior is a 2D platformer where you control a duck with a knife strapped to his chest attempting to get his hat back. Each stage is an arena, where you have to kill waves of enemies before facing off against a boss. It was a fun project with an absurd concept that made my first game in Unity a memorable one.</p>
+
+        <h2>Initial Concept</h2>
+        <img src="/./images/dWConceptArt.jpg" style="height: 600px; display: block; margin: auto;">
+
+        <p>The starting inspiration for Duck Warrior was the game “Joust”, an Atari game where you joust on an ostrich. From this, we derived two things: ramming into enemies in order to kill them, and birds. Unlike its inspiration, however, Duck Warrior focuses less on 1v1 battles against similar enemies and focuses more on level progression and boss fights.</p>
+
+        <h2>Player Movement</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ouqM6Q7Ffyk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; margin: auto; padding-bottom: 20px;"></iframe>
+
+        <p>In the spirit of the game’s bird theme, we wanted to make the player’s jumping fluttery. By making the jumps short and quick, we managed to not only simulate the flapping of wings, but to also give the player finer control while jumping. Speed was also an important aspect, since the way to kill enemies is by ramming into them, so the controls needed to feel fast but not uncontrollable.</p>
+
+        <details>
+            <summary><h3><a style="cursor: pointer;">Player Movement Snippet</a></h3></summary>
+            {% highlight csharp %}
+            public void Move(Vector2 direction) //function that handles the player movement, as well as movement animations.
+            {
+            if (Mathf.Abs(direction.x) > .01f) //if input in the x direction is detected...
+            {
+            rb.velocity = new Vector2(moveSpeed * direction.x, rb.velocity.y); //...add velocity in that direction...
+            playerAnimator.SetBool("walkingRight", true); //...and play the walking animation.
+            }
+            else //if no input is detected...
+            {
+            rb.velocity = new Vector2(0f, rb.velocity.y); //...stop any x movement...
+            playerAnimator.SetBool("walkingRight", false); //...stop the walking animation...
+            playerAnimator.SetBool("jumping", false); //...and stop the jumping animation.
+            }
+            if (Input.GetKeyDown("j")) //if the j key is pressed...
+            {
+            rb.AddForce(new Vector2(0, 3), ForceMode2D.Impulse); //...add upward force to make the player jump...
+            playerAnimator.SetBool("jumping", true); //...and play the jumping animation.
+            }
+            }
+            {% endhighlight %}
+        </details>
+
+        <h2>Level Design</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dHgzYQ4i3-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; margin: auto; padding-bottom: 20px;"></iframe>
+
+        <p>The general design of the game was to be set in arena levels where the player must defeat all the enemies before taking on the boss. Spawning in new enemies after the initial enemies allowed for the fairly compact levels to still throw new obstacles at the player, and to provide a greater challenge.</p>
+
+        <h2>Enemy Design</h2>
+        <img src="/./images/dWPidgeon.gif" style="width: 600px; display: block; margin: auto;">
+        <img src="/./images/dWRobin.gif" style="height: 200px; display: block; margin: auto;">
+
+        <p>The enemies either patrol an area of the level, or chase after the player. While the first level’s enemies are the least threatening, with their weapons at a fixed position, the second and third level’s enemies swing their weapons, making them a bigger threat.</p>
+
+        <details>
+            <summary><h3><a style="cursor: pointer;">Enemy Chaser Movement Snippet</a></h3></summary>
+            {% highlight csharp %}
+            void Update()
+            {
+            if(GameObject.Find("PlayerDuck").transform.position.x < transform.position.x) //if the player is to the left...
+            {
+            playerX = -1; //...set playerX in the left direction;
+            }
+            else if(GameObject.Find("PlayerDuck").transform.position.x > transform.position.x) //else if the player is to the right...
+            {
+            playerX = 1; //...set playerX in the right direction;
+            }
+            else //else if the player is neither to the left nor right...
+            {
+            playerX = 0; //...set playerX in neither direction.
+            }
+            if(GameObject.Find("PlayerDuck").transform.position.y < transform.position.y) //if the player is below...
+            {
+            playerY = -1; //...set playerY to be below;
+            }
+            else if (GameObject.Find("PlayerDuck").transform.position.y > transform.position.y) //else if the player is above...
+            {
+            playerY = 1; //...set playerY to be above;
+            }
+            else //else if the player is neither below nor above...
+            {
+            playerY = 0; //...set playerY to be neither below nor above.
+            }
+            Move(new Vector2(playerX, playerY)); //move towards the player based on their x and y directions relative to this object.
+            FlipSprite(); //flip this object's sprite based on its current movement.
+            }
+            {% endhighlight %}
+        </details>
+
+        <h2>Boss Design</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Xb2TY1SBMlI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; margin: auto; padding-bottom: 20px;"></iframe>
+
+        <p>Designing the bosses was a highlight for me, as coming up with new ways to make each boss fight different and challenging was fun. Each boss requires a different strategy to defeat it, with each boss being harder than the last, culminating with a multi-phase final boss fight.</p>
+
+        <details>
+            <summary><h3><a style="cursor: pointer;">Final Boss Health Snippet</a></h3></summary>
+            {% highlight csharp %}
+            void Update()
+            {
+            if (currentHealth <= -1) //if boss's health is below 0...
+            {
+            GameObject.Find("DeathSound").GetComponent<AudioSource>
+                ().Play(); //...play the boss death sound...
+                Destroy(gameObject); //...and destroy the boss gameObject.
+                }
+                else if(currentHealth == 3) //if boss's health is exactly 3...
+                {
+                GameObject.Find("DeathSound").GetComponent<AudioSource>
+                    ().Play(); //...play the boss death sound...
+                    Destroy(transform.GetChild(2).gameObject); //...destroy the first-phase weapon (in this case, the falcon)...
+                    currentHealth--; //...and lower health by 1.
+                    }
+                    if (frames) //if the boss has invincibility frames, then flash the sprite red and white repeatedly until the time limit is up.
+                    {
+                    timeRemaining -= Time.deltaTime;
+                    if (timeRemaining <= 0)
+                    {
+                    frames = false;
+                    gameObject.GetComponent<SpriteRenderer>
+                        ().color = Color.white;
+                        }
+                        else if (timeRemaining >= 1.75 || timeRemaining >= 1.25 && timeRemaining <= 1.5 || timeRemaining >= 0.75 && timeRemaining <= 1.0 || timeRemaining >= 0.25 && timeRemaining <= 0.5)
+                        {
+                        gameObject.GetComponent<SpriteRenderer>
+                            ().color = Color.red;
+                            }
+                            else
+                            {
+                            gameObject.GetComponent<SpriteRenderer>
+                                ().color = Color.white;
+                                }
+                                }
+                                }
+                                {% endhighlight %}
+        </details>
+
+        <hr>
+
+        <div style="text-align: center;">
+            <a href="mailto:chaotixlevine@gmail.com"><img src="/./images/mail.png" style="height: 40px; margin: auto; padding-right: 10px;"></a>
+            <a href="https://www.linkedin.com/in/cameron-levine-930242214"><img src="/./images/LI-In-Bug.png" style="height: 40px;"></a>
+        </div>
+
+
+    </section>
+
+</body>
+</html>
