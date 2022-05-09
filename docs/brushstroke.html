@@ -94,68 +94,48 @@
             <p>Every time the player moves a tile, there is a chance they get into a battle, with an additional random amount of enemies appearing. The player has three minions at their disposal -- each with their own unique stats and special abilities. Each combatant has a turn timer, and when their timer is up, they're allowed to make a move. If the player wins, they gain experience points to level up their minions, and have a chance of finding a healing item.</p>
 
             <details>
-                <summary><a style="cursor: pointer;">Battle Snippet (temporary placeholder)</a></summary>
-                <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; background-color: #484848; color: white;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">void</span> <span style="color: #a6e22e">FixedUpdate</span><span style="color: #f8f8f2">()</span>
-    <span style="color: #f8f8f2">{</span>
-        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(boundaryBounce)</span> <span style="color: #75715e">//if the enemy runs into a level boundary...</span>
-        <span style="color: #f8f8f2">{</span>
-            <span style="color: #f8f8f2">boundaryBounceTime</span> <span style="color: #f8f8f2">-=</span> <span style="color: #f8f8f2">Time.deltaTime;</span>
-            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(boundaryBounceTime</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
-            <span style="color: #f8f8f2">{</span>
-                <span style="color: #f8f8f2">boundaryBounce</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #f8f8f2">rb.AddForce(transform.forward</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">acceleration);</span> <span style="color: #75715e">//...add force in the opposite direction of the boundary for boundaryBounceTime seconds.</span>
-        <span style="color: #f8f8f2">}</span>
-        <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f8f8f2">(chaser</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">Vector3.Distance(transform.position,</span> <span style="color: #f8f8f2">player.transform.position)</span> <span style="color: #f8f8f2">&lt;</span> <span style="color: #f8f8f2">minimumDistance)</span> <span style="color: #75715e">//if the enemy chases and the player is within a minimumDistance radius...</span>
-        <span style="color: #f8f8f2">{</span>
-            <span style="color: #f8f8f2">animator.SetBool(</span><span style="color: #e6db74">&quot;isRunning&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">//...play moving animations...</span>
-            <span style="color: #f8f8f2">transform.LookAt(player.transform);</span>
-            <span style="color: #f8f8f2">rb.AddForce(transform.forward</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">acceleration);</span> <span style="color: #75715e">//...add force to run towards the player;</span>
-            <span style="color: #f8f8f2">standingTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">initialStandingTime;</span>
-            <span style="color: #f8f8f2">movingTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">initialMovingTime;</span>
-            <span style="color: #f8f8f2">isMoving</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
-            <span style="color: #f8f8f2">isStanding</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #f8f8f2">}</span>
-        <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f8f8f2">(Vector3.Distance(transform.position,</span> <span style="color: #f8f8f2">player.transform.position)</span> <span style="color: #f8f8f2">&lt;</span> <span style="color: #f8f8f2">minimumDistance)</span> <span style="color: #75715e">//else if the enemy doesn&#39;t chase and the player is within a minimumDistance radius...</span>
-        <span style="color: #f8f8f2">{</span>
-            <span style="color: #f8f8f2">animator.SetBool(</span><span style="color: #e6db74">&quot;isRunning&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">//...play moving animations...</span>
-            <span style="color: #f8f8f2">playerPosition</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Vector3(player.transform.position.x,</span> <span style="color: #f8f8f2">transform.position.y,</span> <span style="color: #f8f8f2">player.transform.position.z);</span>
-            <span style="color: #f8f8f2">transform.LookAt(playerPosition);</span>
-            <span style="color: #f8f8f2">transform.Rotate(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">180</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">);</span>
-            <span style="color: #f8f8f2">rb.AddForce(transform.forward</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">acceleration);</span> <span style="color: #75715e">//...add force to run away from the player.</span>
-            <span style="color: #f8f8f2">standingTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">initialStandingTime;</span>
-            <span style="color: #f8f8f2">movingTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">initialMovingTime;</span>
-            <span style="color: #f8f8f2">isMoving</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
-            <span style="color: #f8f8f2">isStanding</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #f8f8f2">}</span>
-        <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f8f8f2">(isMoving)</span> <span style="color: #75715e">//if the enemy is in an idle moving state...</span>
-        <span style="color: #f8f8f2">{</span>
-            <span style="color: #f8f8f2">movingTime</span> <span style="color: #f8f8f2">-=</span> <span style="color: #f8f8f2">Time.deltaTime;</span>
-            <span style="color: #f8f8f2">animator.SetBool(</span><span style="color: #e6db74">&quot;isRunning&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">//...play moving animations...</span>
-            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(movingTime</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
-            <span style="color: #f8f8f2">{</span>
-                <span style="color: #f8f8f2">isMoving</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
-                <span style="color: #f8f8f2">isStanding</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span>
-                <span style="color: #f8f8f2">movingTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">initialMovingTime;</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #f8f8f2">rb.AddForce(transform.forward</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">acceleration);</span> <span style="color: #75715e">//...and add force in a random direction.</span>
-        <span style="color: #f8f8f2">}</span>
-        <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f8f8f2">(isStanding)</span> <span style="color: #75715e">//if the enemy is in an idle standing state...</span>
-        <span style="color: #f8f8f2">{</span>
-            <span style="color: #f8f8f2">standingTime</span> <span style="color: #f8f8f2">-=</span> <span style="color: #f8f8f2">Time.deltaTime;</span>
-            <span style="color: #f8f8f2">animator.SetBool(</span><span style="color: #e6db74">&quot;isRunning&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">//...don&#39;t play animations...</span>
-            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(standingTime</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
-            <span style="color: #f8f8f2">{</span>
-                <span style="color: #f8f8f2">isMoving</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span>
-                <span style="color: #f8f8f2">isStanding</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
-                <span style="color: #f8f8f2">standingTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">initialStandingTime;</span>
-                <span style="color: #f8f8f2">transform.Rotate(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Vector3(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">Random.Range(</span><span style="color: #ae81ff">0.0f</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">360.0f</span><span style="color: #f8f8f2">),</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">));</span> <span style="color: #75715e">//...and rotate to a new direction.</span>
-            <span style="color: #f8f8f2">}</span>
-        <span style="color: #f8f8f2">}</span>
-    <span style="color: #f8f8f2">}</span>
+                <summary><a style="cursor: pointer;">Battle Snippet (turn timer and health check)</a></summary>
+                <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; background-color: #484848; color: white;"><pre style="margin: 0; line-height: 125%">                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(PlayerInventory.GetComponent&lt;inventory&gt;().firstCurrentHP</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if the first party member is still conscious...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">partyOneTimerTime</span> <span style="color: #f8f8f2">+=</span> <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().firstSpeed</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">Time.deltaTime;</span> <span style="color: #75715e">//...progress their turn timer...</span>
+                    <span style="color: #f8f8f2">partyOneTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyOneTimerTime;</span> <span style="color: #75715e">//...and update the slider component to reflect this change.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #66d9ef">else</span> <span style="color: #75715e">//else if the first party member is knocked out...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().firstCurrentHP</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyOneTimerTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0.0f</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyOneTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyOneTimerTime;</span> <span style="color: #75715e">//...set their health and turn timer to 0.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(PlayerInventory.GetComponent&lt;inventory&gt;().secondCurrentHP</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if the second party member is still conscious...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">partyTwoTimerTime</span> <span style="color: #f8f8f2">+=</span> <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().secondSpeed</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">Time.deltaTime;</span> <span style="color: #75715e">//...progress their turn timer...</span>
+                    <span style="color: #f8f8f2">partyTwoTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyTwoTimerTime;</span> <span style="color: #75715e">//and update the slider component to reflect this change.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #66d9ef">else</span> <span style="color: #75715e">//else if the second party member is knocked out...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().secondCurrentHP</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyTwoTimerTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0.0f</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyTwoTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyTwoTimerTime;</span> <span style="color: #75715e">//...set their health and turn timer to 0.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(PlayerInventory.GetComponent&lt;inventory&gt;().thirdCurrentHP</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if the third party member is still conscious...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">partyThreeTimerTime</span> <span style="color: #f8f8f2">+=</span> <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().thirdSpeed</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">Time.deltaTime;</span> <span style="color: #75715e">//...progress their turn timer...</span>
+                    <span style="color: #f8f8f2">partyThreeTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyThreeTimerTime;</span> <span style="color: #75715e">//...and update the slider component to reflect this change.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #66d9ef">else</span> <span style="color: #75715e">//else if the third party member is knocked out...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().thirdCurrentHP</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyThreeTimerTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0.0f</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyThreeTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyThreeTimerTime;</span> <span style="color: #75715e">//...set their health and turn timer to 0.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #75715e">//if the entire party is knocked out...</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(PlayerInventory.GetComponent&lt;inventory&gt;().firstCurrentHP</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().secondCurrentHP</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().thirdCurrentHP</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">BattleMusicPlayer.GetComponent&lt;AudioSource&gt;().Stop();</span> <span style="color: #75715e">//...stop the battle music...</span>
+                    <span style="color: #f8f8f2">gameOver</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//...show the game over screen...</span>
+                    <span style="color: #f8f8f2">inBattle</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//...and stop the battle.</span>
+                <span style="color: #f8f8f2">}</span>
 </pre></div>
-
-              
             </details>
 
             <h2>UI and Graphics</h2>
