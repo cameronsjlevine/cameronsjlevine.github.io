@@ -3,6 +3,10 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+h1, h2 {
+    margin-bottom: -5px;
+}
+
 #head {
     font-size: 18px;
     position: fixed;
@@ -20,11 +24,15 @@ body {
     margin-top: 24px;
 }
 
-.menu-right:active {
-    color: black;
+.menu-right:visited {
+    color: white;
 }
 
-.menu-right:visited {
+.menu-right:hover {
+    color: #D86338;
+}
+
+.menu-right:active {
     color: white;
 }
 
@@ -34,14 +42,14 @@ body {
 }
 
 #title {
-    margin-left: 25%;
-    margin-right: 25%;
-    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: left;
 }
 
 #content {
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left: 30%;
+    margin-right: 30%;
     text-align: left;
 }
 
@@ -54,4 +62,10 @@ body {
     color: #D86338;
 }
 
+#content a:hover {
+    color: #35ACD7;
+}
 
+#content a:active {
+    color: #D86338;
+}
