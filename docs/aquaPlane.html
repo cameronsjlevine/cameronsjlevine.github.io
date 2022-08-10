@@ -1,1 +1,193 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./assets/css/styleV2.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/icon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Aqua Plane | Cameron Levine</title>
+</head>
+<body>
+    <!--<body style="background-image: url(../images/background.png); background-position: center; background-size: 850px;  background-repeat: no-repeat; background-color: black;">-->
+    <section style="margin: auto;">
+        <div class="wrapper">
+            <a id="homeSection"></a>
+            <div id="head">
+                <a class="downloads" href="https://cameronsjlevine.github.io#homeSection"><img style="width: 64px; height: 64px;" src="./images/icon.svg"></a>
+                <a class="menu-right" href="https://cameronsjlevine.github.io/about">About</a>
+                <div class="dropdown menu-right">
+                    <button class="dropbtn">Resumes</button>
+                    <div class="dropdown-content panel">
+                      <a href="./images/Resume_Levine.pdf">Game Development</a>
+                      <a href="./images/Resume_CLevine.pdf">Computer Science</a>
+                    </div>
+                </div>
+                <a class="menu-right" href="https://cameronsjlevine.github.io/graphicDesign">Graphic Design</a>
+                <!--<li class="downloads"><a href="https://cameronsjlevine.github.io/blog/">Blog</a></li>-->
+                <a class="menu-right" href="https://cameronsjlevine.github.io#gameSection">Games</a>
+                <a class="menu-right" href="https://cameronsjlevine.github.io#homeSection">Home</a>
+            </div><!-- end header -->
+        </div>
+        <div class="space">
+            &nbsp;
+        </div>
+        <div id="content">
+            <link rel="shortcut icon" type="image/x-icon" href="./images/icon.ico">
+
+            <h1 id="titleSection"></h1>
+
+            <img src="./images/aquaPlaneSprites_coverImage.png" style="width: 400px; display: block; margin: auto;" />
+            <h1>Aqua Plane</h1>
+            <iframe src="https://itch.io/embed/1630702?bg_color=1b1b1b&amp;fg_color=ffffff&amp;link_color=ff071c&amp;border_color=434343" width="552" height="167" frameborder="0"><a href="https://cameronlevine.itch.io/aqua-plane">Aqua Plane by cameronlevine</a></iframe>
+
+            <p>Aqua Plane is a classic top-down shooter.</p>
+
+            <h2>Initial Design Plans</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UIHdh0vfZ0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <p>The original limitation that I put upon this game was that everything had to die in one hit. The player, the enemies, and even the bosses -- everything had to be a glass cannon. With this in mind, I thought that the genre that would work best with this limitation would be a top-down shooter, as there are many games in the bullet-hell genre that work with this assumption already. This also influenced my decision to use pixel art. Since it's an older-style game, and older art style would help to drive the point home further.</p>
+
+            <details>
+                <summary><a style="cursor: pointer;">Player Movement Snippet</a></summary>
+                <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; background-color: #484848; color: white;"><pre style="margin: 0; line-height: 125%">            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(transform.position</span> <span style="color: #f8f8f2">!=</span> <span style="color: #f8f8f2">stepForward)</span> <span style="color: #75715e">//if the player hasn&#39;t yet moved to the forward position...</span>
+            <span style="color: #f8f8f2">{</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(!gameObject.GetComponent&lt;AudioSource&gt;().isPlaying)</span> <span style="color: #75715e">//if not playing a movement sound effect...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">gameObject.GetComponent&lt;AudioSource&gt;().Play();</span> <span style="color: #75715e">//...then play a movement sound effect.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #f8f8f2">transform.position</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">Vector3.MoveTowards(transform.position,</span> <span style="color: #f8f8f2">stepForward,</span> <span style="color: #f8f8f2">transitionSpeed</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">Time.deltaTime);</span> <span style="color: #75715e">//...then move the player towards the forward position.</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(Physics.Raycast(transform.position,</span> <span style="color: #f8f8f2">forwardDirection,</span> <span style="color: #66d9ef">out</span> <span style="color: #f8f8f2">hit,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">hit.collider.tag</span> <span style="color: #f8f8f2">==</span> <span style="color: #e6db74">&quot;nextSceneDoor&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if the player moves into a nextSceneDoor...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">FadeInOutBlack.GetComponent&lt;fadeInOutBlack&gt;().fadeOut</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//...then fade out the screen.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(transform.position</span> <span style="color: #f8f8f2">==</span> <span style="color: #f8f8f2">stepForward</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">!Physics.Raycast(transform.position,</span> <span style="color: #f8f8f2">forwardDirection,</span> <span style="color: #ae81ff">10</span><span style="color: #f8f8f2">))</span> <span style="color: #75715e">//if the player has reached the forward position and isn&#39;t in front of a wall...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">BattleHandler.GetComponent&lt;battleHandler&gt;().randomBattleChance();</span> <span style="color: #75715e">//...then give a chance for a random battle to occur.</span>
+                <span style="color: #f8f8f2">}</span>
+            <span style="color: #f8f8f2">}</span>
+            <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f8f8f2">(transform.eulerAngles</span> <span style="color: #f8f8f2">!=</span> <span style="color: #f8f8f2">newRotation</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">turningLeft</span> <span style="color: #f8f8f2">==</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//else if the player is turning left but hasn&#39;t yet turned fully...</span>
+            <span style="color: #f8f8f2">{</span>
+                <span style="color: #f8f8f2">transform.eulerAngles</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Vector3(transform.eulerAngles.x,</span> <span style="color: #f8f8f2">transform.eulerAngles.y</span> <span style="color: #f8f8f2">-</span> <span style="color: #f8f8f2">rotationSpeed</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">Time.deltaTime,</span> <span style="color: #f8f8f2">transform.eulerAngles.z);</span> <span style="color: #75715e">//...turn towards the new rotated position.</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(transform.eulerAngles.y</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #f8f8f2">newRotation.y</span> <span style="color: #f8f8f2">||</span> <span style="color: #f8f8f2">newRotation.y</span> <span style="color: #f8f8f2">==</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">transform.eulerAngles.y</span> <span style="color: #f8f8f2">&gt;=</span> <span style="color: #ae81ff">270</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if the player is done rotating...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">turningLeft</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">transform.eulerAngles</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">newRotation;</span> <span style="color: #75715e">//...make this else if untrue.</span>
+                <span style="color: #f8f8f2">}</span>
+            <span style="color: #f8f8f2">}</span>
+            <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f8f8f2">(transform.eulerAngles</span> <span style="color: #f8f8f2">!=</span> <span style="color: #f8f8f2">newRotation</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">turningRight</span> <span style="color: #f8f8f2">==</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//else if the player is turning right but hasn&#39;t yet turned fully...</span>
+            <span style="color: #f8f8f2">{</span>
+                <span style="color: #f8f8f2">transform.eulerAngles</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Vector3(transform.eulerAngles.x,</span> <span style="color: #f8f8f2">transform.eulerAngles.y</span> <span style="color: #f8f8f2">+</span> <span style="color: #f8f8f2">rotationSpeed</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">Time.deltaTime,</span> <span style="color: #f8f8f2">transform.eulerAngles.z);</span> <span style="color: #75715e">//...turn towards the new rotated position.</span>
+                <span style="color: #75715e">//if the player is done rotating...note: because of how Unity handles rotation, these || statements are to ensure the player actually stops rotating...</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(transform.eulerAngles.y</span> <span style="color: #f8f8f2">&gt;=</span> <span style="color: #f8f8f2">newRotation.y</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">newRotation.y</span> <span style="color: #f8f8f2">!=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">||</span> <span style="color: #f8f8f2">newRotation.y</span> <span style="color: #f8f8f2">==</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">transform.eulerAngles.y</span> <span style="color: #f8f8f2">&gt;=</span> <span style="color: #ae81ff">359</span> <span style="color: #f8f8f2">||</span> <span style="color: #f8f8f2">newRotation.y</span> <span style="color: #f8f8f2">==</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">transform.eulerAngles.y</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">90</span><span style="color: #f8f8f2">)</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">turningRight</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">transform.eulerAngles</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">newRotation;</span> <span style="color: #75715e">//...make this else if untrue.</span>
+                <span style="color: #f8f8f2">}</span>
+            <span style="color: #f8f8f2">}</span>
+</pre></div>
+            </details>
+
+            <h2>Enemy/Boss Design</h2>
+            <img src="./images/level1.png" style="width: 400px; display: block; margin: auto;" />
+
+            <p>Since the player always dies in one hit, I had to design each boss and enemy so that they wouldn't be too punishing but still put up a decent challenge. Especially with the bosses, I tried to incentivise cleverness over brute-force, as many of the bosses can be beaten quite easily with a well-timed rocket.</p>
+          
+
+            <h2>Enemy Spawning</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4_cuNZA2bdo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <p>I wanted to make the enemies spawn randomly, but still using patterns, in the fashion that old space shooters tended to do. So instead of choosing random enemies to spawn, the game chooses random preset patterns, which allows for the gameplay to be more dynamic without becoming unfair by spawning an impassable wave of enemies. </p>
+
+            <details>
+                <summary><a style="cursor: pointer;">Battle Snippet (turn timer and health check)</a></summary>
+                <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; background-color: #484848; color: white;"><pre style="margin: 0; line-height: 125%">                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(PlayerInventory.GetComponent&lt;inventory&gt;().firstCurrentHP</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if the first party member is still conscious...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">partyOneTimerTime</span> <span style="color: #f8f8f2">+=</span> <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().firstSpeed</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">Time.deltaTime;</span> <span style="color: #75715e">//...progress their turn timer...</span>
+                    <span style="color: #f8f8f2">partyOneTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyOneTimerTime;</span> <span style="color: #75715e">//...and update the slider component to reflect this change.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #66d9ef">else</span> <span style="color: #75715e">//else if the first party member is knocked out...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().firstCurrentHP</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyOneTimerTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0.0f</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyOneTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyOneTimerTime;</span> <span style="color: #75715e">//...set their health and turn timer to 0.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(PlayerInventory.GetComponent&lt;inventory&gt;().secondCurrentHP</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if the second party member is still conscious...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">partyTwoTimerTime</span> <span style="color: #f8f8f2">+=</span> <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().secondSpeed</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">Time.deltaTime;</span> <span style="color: #75715e">//...progress their turn timer...</span>
+                    <span style="color: #f8f8f2">partyTwoTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyTwoTimerTime;</span> <span style="color: #75715e">//and update the slider component to reflect this change.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #66d9ef">else</span> <span style="color: #75715e">//else if the second party member is knocked out...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().secondCurrentHP</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyTwoTimerTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0.0f</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyTwoTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyTwoTimerTime;</span> <span style="color: #75715e">//...set their health and turn timer to 0.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(PlayerInventory.GetComponent&lt;inventory&gt;().thirdCurrentHP</span> <span style="color: #f8f8f2">&gt;</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">//if the third party member is still conscious...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">partyThreeTimerTime</span> <span style="color: #f8f8f2">+=</span> <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().thirdSpeed</span> <span style="color: #f8f8f2">*</span> <span style="color: #f8f8f2">Time.deltaTime;</span> <span style="color: #75715e">//...progress their turn timer...</span>
+                    <span style="color: #f8f8f2">partyThreeTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyThreeTimerTime;</span> <span style="color: #75715e">//...and update the slider component to reflect this change.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #66d9ef">else</span> <span style="color: #75715e">//else if the third party member is knocked out...</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().thirdCurrentHP</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyThreeTimerTime</span> <span style="color: #f8f8f2">=</span> <span style="color: #ae81ff">0.0f</span><span style="color: #f8f8f2">;</span>
+                    <span style="color: #f8f8f2">partyThreeTimerSlider.GetComponent&lt;Slider&gt;().</span><span style="color: #66d9ef">value</span> <span style="color: #f8f8f2">=</span> <span style="color: #f8f8f2">partyThreeTimerTime;</span> <span style="color: #75715e">//...set their health and turn timer to 0.</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #75715e">//if the entire party is knocked out...</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(PlayerInventory.GetComponent&lt;inventory&gt;().firstCurrentHP</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().secondCurrentHP</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">&amp;&amp;</span> <span style="color: #f8f8f2">PlayerInventory.GetComponent&lt;inventory&gt;().thirdCurrentHP</span> <span style="color: #f8f8f2">&lt;=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #f8f8f2">BattleMusicPlayer.GetComponent&lt;AudioSource&gt;().Stop();</span> <span style="color: #75715e">//...stop the battle music...</span>
+                    <span style="color: #f8f8f2">gameOver</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//...show the game over screen...</span>
+                    <span style="color: #f8f8f2">inBattle</span> <span style="color: #f8f8f2">=</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//...and stop the battle.</span>
+                <span style="color: #f8f8f2">}</span>
+</pre></div>
+            </details>
+
+            <h2>UI and Graphics</h2>
+            <img src="./images/keySymbols_attackButton.png" style="width: 250px; display: block; margin: auto;" />
+            <img src="./images/attackSkeleton.png" style="width: 250px; display: block; margin: auto;" />
+            <img src="./images/titles_victoryTitle.png" style="width: 250px; display: block; margin: auto;" />
+            
+            <p>This is the first time I ever did spritework, and although it was challenging at some points, it was also quite fun. I also went through the process of making a font for personal use, tentatively called "AquaBits", for the purpose of writing out titles and words on buttons easier. Finally, I felt I had to come up with some sort of title to go under for games that were made by me personally, as such "Morning Star Labs" was born, along with an accompanying logo.</p>
+          
+            <h2>Music and Sound Effects</h2>
+            <audio controls>
+                <source src="./images/Dungeon_1.mp3" type="audio/mpeg">
+            </audio>
+            <audio controls>
+                <source src="./images/Dungeon_1_Battle.mp3" type="audio/mpeg">
+            </audio>
+            
+            <p>The music was made in MuseScore 3, and the sound effects were made in bfxr, which is an old but gold program for making 8-bit sounds.</p>
+          
+            <hr>
+
+            <div style="text-align: center;">
+                <a href="mailto:chaotixlevine@gmail.com"><img src="./images/mail.svg" style="height: 40px; margin: auto; padding-right: 10px;"></a>
+                <a href="https://www.linkedin.com/in/cameron-levine-930242214"><img src="/./images/LI-In-Bug.png" style="height: 40px;"></a>
+            </div>
+
+
+</section>
+    </div>
+    <script>
+        var acc = document.getElementsByClassName("dropbtn");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
+</body>
+</html>
 
